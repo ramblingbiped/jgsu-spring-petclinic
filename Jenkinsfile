@@ -1,12 +1,12 @@
 pipeline {
     agent any
     triggers {
-        pollSCM('H * * * *')
+        pollSCM('* * * * *')
     }
     stages {
         stage('Checkout'){
             steps {
-                git branch: 'jenkins-pipeline-poc', url: 'https://github.com/ramblingbiped/jgsu-spring-petclinic.git'
+                git branch: 'jenkins-pipeline-poc', url: 'https://github.com/ramblingbiped/jgsu-spring-petclinic'
             }
         }
         stage('Build'){
